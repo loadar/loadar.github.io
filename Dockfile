@@ -1,0 +1,19 @@
+# Build the Jekyll site
+FROM ruby:3.1.3 AS builder
+
+RUN groupadd -g 1000 vscode && \
+    useradd -m -u 1000 -g vscode vscode
+
+WORKDIR /usr/src/app
+
+# Set permissions for the working directory
+RUN chown -R vscode:vscode /usr/src/app
+
+# Switch to the non-root user
+USER vscode
+
+COPY Gemfile ./
+COPY _config.yml _config_docker.yml ./
+RUN bundle install
+
+CMD ["bundle", "exec", "jekyll", "serve"]

@@ -1,16 +1,16 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-group :jekyll_plugins do
-  gem 'jekyll', '~> 3.10.0'
-  gem 'jekyll-feed'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-redirect-from'
-  gem 'jemoji'
-  gem 'webrick', '~> 1.8'
-  gem 'csv'
-  gem 'bigdecimal'
-  #gem 'liquid', '~> 4.0.4'
+source "https://rubygems.org"
+
+#gemspec
+
+gem "jekyll-theme-chirpy", "~> 7.4.1"
+
+gem "html-proofer", "~> 5.0", group: :test
+
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
 end
 
-gem 'github-pages', '~> 232'
-gem 'connection_pool', '2.5.0'
+gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
