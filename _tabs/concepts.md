@@ -1,5 +1,5 @@
 ---
 layout: concepts
-icon: fas fa-info-circle
+icon: fas fa-folder
 order: 4
 ---
